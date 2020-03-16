@@ -40,7 +40,7 @@ class Post extends Component {
         if (text.includes('\n')) {
             console.log("hit", text)
 
-            let QA = text.split('/n');
+            let QA = text.split('\n');
             // console.log(QA);
             this.innerText = "innerText"
             return <div className="innerText"><p>{QA[0] + '?'}</p><p>{QA[1]}</p></div>
