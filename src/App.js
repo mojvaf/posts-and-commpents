@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import Post from './component/Post'
 import nena from './images/nena.jpg'
-import img2 from './images/like.png'
 import jack from './images/jack.jpg'
 
 
@@ -91,19 +90,16 @@ const posts = [
   }
 ]
 
-const author = posts.map(i=>i.author)
-const text = posts.map(i=>i.text)
-const created = posts.map(i=>i.created_at)
-const likes = posts.map(i=>i.likes)
-const category= posts.map(i=>i.category)
-const comment = posts.map(i => i.comments)
-
+/**
+ * There is no need to map through each individual property and store them in one const.
+ * Instead, map through the list of posts and display a Post component that requires the
+ * data of one single post.
+ */
 function App() {
   return (
     <div className="App">
-
-      <Post props={author} text={text} created={created} comment={comment} likes={likes} category={category}></Post></div>
-
+      {posts.map(post => <Post post={post} />)}
+    </div>
   )
 }
 
